@@ -1,0 +1,15 @@
+{
+  // F5 : ouvre une fenêtre "Extension Development Host" avec le thème chargé.
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Lancer le thème Neon Void",
+      "type": "extensionHost",
+      "request": "launch",
+      "args": [
+        "--extensionDevelopmentPath=${workspaceFolder}",
+        "${workspaceFolder}/samples"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "neon-void",
+  "version": 1,
+  "enabled": true,
+  "ratio": 4.5,
+  "owner": null,
+  "palette": {
+    "accent": "#00E5FF",
+    "levels": [1, 2, 3]
+  }
+}

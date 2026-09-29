@@ -1,0 +1,1287 @@
+// FICHIER GÉNÉRÉ par scripts/build-soft.js — ne pas modifier à la main.
+// Modifiez neon-void-color-theme.json puis relancez : npm run build
+{
+  "$schema": "vscode://schemas/color-theme",
+  "name": "Neon Void Soft",
+  "type": "dark",
+  // Active les couleurs sémantiques fournies par les serveurs de langage
+  // (Dart analysis server, clangd / cpptools, Intelephense...).
+  "semanticHighlighting": true,
+
+  // ==========================================================================
+  // PALETTE DE RÉFÉRENCE (rappel, non interprété par VS Code)
+  //   Noir pur        #0C0C12   fond de tout
+  //   Bordure         #22222C   séparation discrète des zones
+  //   Bordure widget  #5CDCEB40 cyan 25 % : widgets flottants (voir README)
+  //   Cyan (accent)   #5CDCEB   fonctions, focus, onglet actif, curseur
+  //   Rose néon       #F2709C   mots-clés (gras), balises HTML
+  //   Jaune           #EBD973   types, classes, widgets Flutter
+  //   Vert néon       #72E3A0   chaînes
+  //   Violet néon     #B48CF2   propriétés, annotations, attributs
+  //   Orange néon     #F2A765   nombres, constantes, macros
+  //   Rouge erreur    #F07085   dérivé du rose, réservé aux erreurs/suppressions
+  //   Bleu ANSI       #4D8DFF   dérivé, uniquement pour le terminal
+  //   Texte           #D9D9E3   ~16:1 sur noir
+  //   Texte UI        #B8BACC   texte secondaire de l'interface (~10:1)
+  //   Commentaires    #7684A5   (au lieu de #5C6A8A : 3,9:1 -> 4,9:1)
+  //   Opérateurs      #8A93B0   discrets mais lisibles (~6,8:1)
+  //   Ponctuation     #7C86A2   encore plus discrète (~5,5:1)
+  //   Inactif         #5A5F73   éléments d'UI désactivés / fantômes
+  // ==========================================================================
+
+  "colors": {
+    // ------------------------------------------------------------------------
+    // Couleurs de base globales
+    // ------------------------------------------------------------------------
+    "foreground": "#D9D9E3",
+    "descriptionForeground": "#8A93B0",
+    "disabledForeground": "#5A5F73",
+    "errorForeground": "#F07085",
+    "focusBorder": "#5CDCEB80",
+    "icon.foreground": "#B8BACC",
+    "selection.background": "#5CDCEB40",
+    "widget.border": "#5CDCEB40",
+    "widget.shadow": "#0C0C1200",
+    "sash.hoverBorder": "#5CDCEB",
+    "contrastBorder": "#0C0C1200",
+    "window.activeBorder": "#22222C",
+    "window.inactiveBorder": "#22222C",
+
+    // Liens et blocs de texte (hovers, Markdown preview, welcome...)
+    "textLink.foreground": "#5CDCEB",
+    "textLink.activeForeground": "#9BEAF3",
+    "textPreformat.foreground": "#72E3A0",
+    "textPreformat.background": "#0C0C12",
+    "textCodeBlock.background": "#0C0C12",
+    "textBlockQuote.background": "#0C0C12",
+    "textBlockQuote.border": "#B48CF2",
+    "textSeparator.foreground": "#22222C",
+
+    // ------------------------------------------------------------------------
+    // Barre de titre et menus
+    // ------------------------------------------------------------------------
+    "titleBar.activeBackground": "#0C0C12",
+    "titleBar.activeForeground": "#B8BACC",
+    "titleBar.inactiveBackground": "#0C0C12",
+    "titleBar.inactiveForeground": "#5A5F73",
+    "titleBar.border": "#22222C",
+    "menubar.selectionBackground": "#5CDCEB1A",
+    "menubar.selectionForeground": "#5CDCEB",
+    "menu.background": "#0C0C12",
+    "menu.foreground": "#D9D9E3",
+    "menu.border": "#5CDCEB40",
+    "menu.selectionBackground": "#5CDCEB26",
+    "menu.selectionForeground": "#5CDCEB",
+    "menu.separatorBackground": "#22222C",
+    "commandCenter.background": "#0C0C12",
+    "commandCenter.foreground": "#B8BACC",
+    "commandCenter.border": "#22222C",
+    "commandCenter.activeBackground": "#5CDCEB14",
+    "commandCenter.activeBorder": "#5CDCEB40",
+
+    // ------------------------------------------------------------------------
+    // Barre d'activité (icônes à gauche)
+    // ------------------------------------------------------------------------
+    "activityBar.background": "#0C0C12",
+    // Anti-marquage OLED : les éléments FIXES sont en cyan ~60-70 %.
+    // Le néon plein est réservé au code, qui bouge en permanence.
+    "activityBar.foreground": "#5CDCEB99",
+    "activityBar.inactiveForeground": "#5A5F73",
+    "activityBar.border": "#22222C",
+    "activityBar.activeBorder": "#5CDCEB99",
+    "activityBar.activeBackground": "#0C0C12",
+    "activityBar.activeFocusBorder": "#5CDCEBB3",
+    "activityBarBadge.background": "#5CDCEB",
+    "activityBarBadge.foreground": "#0C0C12",
+    "activityBarTop.foreground": "#5CDCEB99",
+    "activityBarTop.inactiveForeground": "#5A5F73",
+    "activityBarTop.activeBorder": "#5CDCEB99",
+
+    // ------------------------------------------------------------------------
+    // Barre latérale (explorateur, recherche, git...)
+    // ------------------------------------------------------------------------
+    "sideBar.background": "#0C0C12",
+    "sideBar.foreground": "#B8BACC",
+    "sideBar.border": "#22222C",
+    "sideBar.dropBackground": "#5CDCEB1A",
+    // Titre de la barre latérale. Quand l'explorateur n'a qu'une section, VS Code
+    // y affiche le NOM DU DOSSIER RACINE (ex. "rugby_box") : rose néon à 80 %
+    "sideBarTitle.foreground": "#F2709CCC",
+    "sideBarSectionHeader.background": "#0C0C12",
+    // En-têtes de section (nom du dossier racine, STRUCTURE, CHRONOLOGIE) :
+    // rose néon + fin trait rose dessous, pour leur donner une identité
+    "sideBarSectionHeader.foreground": "#F2709C",
+    "sideBarSectionHeader.border": "#F2709C33",
+    "sideBarActivityBarTop.border": "#22222C",
+    "sideBarStickyScroll.background": "#0C0C12",
+    "sideBarStickyScroll.border": "#22222C",
+
+    // Listes et arbres : sélection en cyan translucide, jamais de fond gris
+    "list.activeSelectionBackground": "#5CDCEB1A",
+    "list.activeSelectionForeground": "#5CDCEB",
+    "list.activeSelectionIconForeground": "#5CDCEB",
+    "list.inactiveSelectionBackground": "#5CDCEB14",
+    "list.inactiveSelectionForeground": "#D9D9E3",
+    "list.focusBackground": "#5CDCEB1A",
+    "list.focusForeground": "#D9D9E3",
+    // Élément sélectionné + focus : contour néon plein (effet "tube lumineux")
+    "list.focusAndSelectionOutline": "#5CDCEB",
+    "list.focusOutline": "#5CDCEB80",
+    "list.inactiveFocusOutline": "#5CDCEB33",
+    "list.hoverBackground": "#5CDCEB0D",
+    "list.hoverForeground": "#FFFFFF",
+    "list.highlightForeground": "#5CDCEB",
+    "list.focusHighlightForeground": "#5CDCEB",
+    "list.dropBackground": "#5CDCEB1A",
+    "list.errorForeground": "#F07085",
+    "list.warningForeground": "#F2A765",
+    "list.invalidItemForeground": "#F07085",
+    "list.deemphasizedForeground": "#5A5F73",
+    "listFilterWidget.background": "#0C0C12",
+    "listFilterWidget.outline": "#5CDCEB",
+    "listFilterWidget.noMatchesOutline": "#F07085",
+    // Guide du dossier courant en cyan, les autres presque invisibles
+    "tree.indentGuidesStroke": "#5CDCEB59",
+    "tree.inactiveIndentGuidesStroke": "#22222C",
+
+    // ------------------------------------------------------------------------
+    // Groupes d'éditeurs et onglets
+    // ------------------------------------------------------------------------
+    "editorGroup.border": "#22222C",
+    "editorGroup.dropBackground": "#5CDCEB1A",
+    "editorGroup.emptyBackground": "#0C0C12",
+    "editorGroupHeader.tabsBackground": "#0C0C12",
+    "editorGroupHeader.tabsBorder": "#22222C",
+    "editorGroupHeader.noTabsBackground": "#0C0C12",
+    "editorGroupHeader.border": "#22222C",
+
+    // Onglet actif : texte clair + trait néon cyan en bas
+    "tab.activeBackground": "#0C0C12",
+    "tab.activeForeground": "#D9D9E3",
+    // Trait néon sous l'onglet actif, légèrement adouci (élément fixe)
+    "tab.activeBorder": "#5CDCEBB3",
+    "tab.activeBorderTop": "#0C0C1200",
+    // Onglets inactifs : noirs, texte bleu-gris, aucune bordure
+    "tab.inactiveBackground": "#0C0C12",
+    "tab.inactiveForeground": "#7684A5",
+    "tab.border": "#0C0C1200",
+    "tab.hoverBackground": "#0C0C12",
+    "tab.hoverForeground": "#D9D9E3",
+    "tab.hoverBorder": "#0C0C1200",
+    // Groupe d'éditeur sans focus : même logique, en plus atténué
+    "tab.unfocusedActiveBackground": "#0C0C12",
+    "tab.unfocusedActiveForeground": "#B8BACC",
+    "tab.unfocusedActiveBorder": "#5CDCEB66",
+    "tab.unfocusedActiveBorderTop": "#0C0C1200",
+    "tab.unfocusedInactiveBackground": "#0C0C12",
+    "tab.unfocusedInactiveForeground": "#5A5F73",
+    "tab.unfocusedHoverBackground": "#0C0C12",
+    // Fichier modifié non sauvegardé : trait jaune
+    "tab.activeModifiedBorder": "#EBD973",
+    "tab.inactiveModifiedBorder": "#EBD97366",
+    "tab.unfocusedActiveModifiedBorder": "#EBD97399",
+    "tab.unfocusedInactiveModifiedBorder": "#EBD97340",
+    "tab.lastPinnedBorder": "#22222C",
+    "tab.dragAndDropBorder": "#5CDCEB",
+
+    // Fil d'Ariane (breadcrumbs)
+    "breadcrumb.background": "#0C0C12",
+    "breadcrumb.foreground": "#7684A5",
+    "breadcrumb.focusForeground": "#D9D9E3",
+    "breadcrumb.activeSelectionForeground": "#5CDCEB",
+    "breadcrumbPicker.background": "#0C0C12",
+
+    // ------------------------------------------------------------------------
+    // Éditeur de code
+    // ------------------------------------------------------------------------
+    "editor.background": "#0C0C12",
+    "editor.foreground": "#D9D9E3",
+    "editorCursor.foreground": "#5CDCEB",
+    "editorCursor.background": "#0C0C12",
+    "editorMultiCursor.primary.foreground": "#5CDCEB",
+    "editorMultiCursor.secondary.foreground": "#F2709C",
+
+    // Numéros de ligne : volontairement discrets, ligne active en cyan
+    "editorLineNumber.foreground": "#3A3F52",
+    "editorLineNumber.activeForeground": "#5CDCEB",
+    "editorLineNumber.dimmedForeground": "#2A2D3A",
+
+    // Ligne courante : pas de fond (préserve le noir AMOLED), juste un liseré
+    "editor.lineHighlightBackground": "#0C0C1200",
+    "editor.lineHighlightBorder": "#22222C",
+    "editor.rangeHighlightBackground": "#5CDCEB0D",
+
+    // Sélection : cyan ~18 % (active) et ~9 % (éditeur sans focus)
+    "editor.selectionBackground": "#5CDCEB2E",
+    "editor.selectionForeground": "#FFFFFF",
+    "editor.inactiveSelectionBackground": "#5CDCEB17",
+    "editor.selectionHighlightBackground": "#5CDCEB1A",
+    "editor.selectionHighlightBorder": "#5CDCEB40",
+
+    // Occurrences du symbole sous le curseur (lecture = violet, écriture = rose)
+    "editor.wordHighlightBackground": "#B48CF226",
+    "editor.wordHighlightBorder": "#B48CF24D",
+    "editor.wordHighlightStrongBackground": "#F2709C26",
+    "editor.wordHighlightStrongBorder": "#F2709C4D",
+    "editor.wordHighlightTextBackground": "#B48CF21A",
+
+    // Recherche : jaune électrique
+    "editor.findMatchBackground": "#EBD97340",
+    "editor.findMatchBorder": "#EBD973",
+    "editor.findMatchForeground": "#FFFFFF",
+    "editor.findMatchHighlightBackground": "#EBD9731F",
+    "editor.findMatchHighlightBorder": "#EBD97366",
+    "editor.findRangeHighlightBackground": "#5CDCEB0D",
+    "editor.hoverHighlightBackground": "#5CDCEB14",
+    "editorLink.activeForeground": "#5CDCEB",
+
+    // Guides, espaces, règles
+    "editorWhitespace.foreground": "#30303C",
+    "editorIndentGuide.background1": "#22222C",
+    "editorIndentGuide.activeBackground1": "#5CDCEB40",
+    "editorRuler.foreground": "#22222C",
+    "editorCodeLens.foreground": "#7684A5",
+    "editorInlayHint.foreground": "#7684A5",
+    "editorInlayHint.background": "#0C0C1200",
+    "editorInlayHint.typeForeground": "#7684A5",
+    "editorInlayHint.parameterForeground": "#7684A5",
+    "editorGhostText.foreground": "#5A5F73",
+    "editorUnnecessaryCode.opacity": "#0C0C12AA",
+    "editor.foldBackground": "#5CDCEB0A",
+    "editor.linkedEditingBackground": "#F2709C1A",
+
+    // Sticky scroll (en-têtes collants de fonctions/classes)
+    "editorStickyScroll.background": "#0C0C12",
+    "editorStickyScroll.border": "#22222C",
+    "editorStickyScroll.shadow": "#0C0C1200",
+    "editorStickyScrollHover.background": "#5CDCEB0D",
+
+    // Gouttière (marge gauche) : lignes git
+    "editorGutter.background": "#0C0C12",
+    "editorGutter.addedBackground": "#72E3A0",
+    "editorGutter.modifiedBackground": "#EBD973",
+    "editorGutter.deletedBackground": "#F07085",
+    "editorGutter.foldingControlForeground": "#7684A5",
+    "editorGutter.commentRangeForeground": "#7684A5",
+
+    // Diagnostics : erreur rouge, avertissement orange, info cyan, hint vert
+    "editorError.foreground": "#F07085",
+    "editorWarning.foreground": "#F2A765",
+    "editorInfo.foreground": "#5CDCEB",
+    "editorHint.foreground": "#72E3A0",
+    "problemsErrorIcon.foreground": "#F07085",
+    "problemsWarningIcon.foreground": "#F2A765",
+    "problemsInfoIcon.foreground": "#5CDCEB",
+    "editorLightBulb.foreground": "#EBD973",
+    "editorLightBulbAutoFix.foreground": "#5CDCEB",
+
+    // ------------------------------------------------------------------------
+    // Colorisation des paires de crochets : cycle cyan -> rose -> jaune
+    // (4-6 répètent le cycle pour garder exactement 3 niveaux visuels)
+    // ------------------------------------------------------------------------
+    "editorBracketHighlight.foreground1": "#5CDCEB",
+    "editorBracketHighlight.foreground2": "#F2709C",
+    "editorBracketHighlight.foreground3": "#EBD973",
+    "editorBracketHighlight.foreground4": "#5CDCEB",
+    "editorBracketHighlight.foreground5": "#F2709C",
+    "editorBracketHighlight.foreground6": "#EBD973",
+    "editorBracketHighlight.unexpectedBracket.foreground": "#F07085",
+    "editorBracketPairGuide.activeBackground1": "#5CDCEB80",
+    "editorBracketPairGuide.activeBackground2": "#F2709C80",
+    "editorBracketPairGuide.activeBackground3": "#EBD97380",
+    "editorBracketPairGuide.background1": "#5CDCEB26",
+    "editorBracketPairGuide.background2": "#F2709C26",
+    "editorBracketPairGuide.background3": "#EBD97326",
+    "editorBracketMatch.background": "#5CDCEB1A",
+    "editorBracketMatch.border": "#5CDCEB80",
+
+    // Règle de défilement à droite (overview ruler)
+    "editorOverviewRuler.border": "#22222C",
+    "editorOverviewRuler.background": "#0C0C12",
+    "editorOverviewRuler.errorForeground": "#F07085",
+    "editorOverviewRuler.warningForeground": "#F2A765",
+    "editorOverviewRuler.infoForeground": "#5CDCEB",
+    "editorOverviewRuler.addedForeground": "#72E3A099",
+    "editorOverviewRuler.modifiedForeground": "#EBD97399",
+    "editorOverviewRuler.deletedForeground": "#F0708599",
+    "editorOverviewRuler.findMatchForeground": "#EBD973",
+    "editorOverviewRuler.selectionHighlightForeground": "#5CDCEB80",
+    "editorOverviewRuler.bracketMatchForeground": "#5CDCEB",
+
+    // Minimap
+    "minimap.background": "#0C0C12",
+    "minimap.selectionHighlight": "#5CDCEB66",
+    "minimap.findMatchHighlight": "#EBD97399",
+    "minimap.errorHighlight": "#F07085",
+    "minimap.warningHighlight": "#F2A765",
+    "minimapSlider.background": "#5CDCEB14",
+    "minimapSlider.hoverBackground": "#5CDCEB26",
+    "minimapSlider.activeBackground": "#5CDCEB33",
+    "minimapGutter.addedBackground": "#72E3A0",
+    "minimapGutter.modifiedBackground": "#EBD973",
+    "minimapGutter.deletedBackground": "#F07085",
+
+    // Barres de défilement : cyan translucide, pas d'ombre
+    "scrollbar.shadow": "#0C0C1200",
+    "scrollbarSlider.background": "#5CDCEB1A",
+    "scrollbarSlider.hoverBackground": "#5CDCEB33",
+    "scrollbarSlider.activeBackground": "#5CDCEB4D",
+
+    // ------------------------------------------------------------------------
+    // Widgets flottants (recherche, suggestions, survol, peek...)
+    // Fond noir pur ; bordure cyan 25 % pour les détacher du code
+    // ------------------------------------------------------------------------
+    "editorWidget.background": "#0C0C12",
+    "editorWidget.foreground": "#D9D9E3",
+    "editorWidget.border": "#5CDCEB40",
+    "editorWidget.resizeBorder": "#5CDCEB",
+    "editorSuggestWidget.background": "#0C0C12",
+    "editorSuggestWidget.border": "#5CDCEB40",
+    "editorSuggestWidget.foreground": "#D9D9E3",
+    "editorSuggestWidget.selectedBackground": "#5CDCEB26",
+    "editorSuggestWidget.selectedForeground": "#D9D9E3",
+    "editorSuggestWidget.selectedIconForeground": "#5CDCEB",
+    "editorSuggestWidget.highlightForeground": "#5CDCEB",
+    "editorSuggestWidget.focusHighlightForeground": "#5CDCEB",
+    "editorSuggestWidgetStatus.foreground": "#7684A5",
+    "editorHoverWidget.background": "#0C0C12",
+    "editorHoverWidget.foreground": "#D9D9E3",
+    "editorHoverWidget.border": "#5CDCEB40",
+    "editorHoverWidget.highlightForeground": "#5CDCEB",
+    "editorHoverWidget.statusBarBackground": "#0C0C12",
+    "debugExceptionWidget.background": "#0C0C12",
+    "debugExceptionWidget.border": "#F07085",
+    "editorMarkerNavigation.background": "#0C0C12",
+    "editorMarkerNavigationError.background": "#F07085",
+    "editorMarkerNavigationWarning.background": "#F2A765",
+    "editorMarkerNavigationInfo.background": "#5CDCEB",
+    "editorMarkerNavigationError.headerBackground": "#F070851A",
+    "editorMarkerNavigationWarning.headerBackground": "#F2A7651A",
+    "editorMarkerNavigationInfo.headerBackground": "#5CDCEB1A",
+
+    // Peek view (Aller à la définition en ligne)
+    "peekView.border": "#5CDCEB",
+    "peekViewEditor.background": "#0C0C12",
+    "peekViewEditorGutter.background": "#0C0C12",
+    "peekViewEditor.matchHighlightBackground": "#EBD97340",
+    "peekViewResult.background": "#0C0C12",
+    "peekViewResult.fileForeground": "#D9D9E3",
+    "peekViewResult.lineForeground": "#B8BACC",
+    "peekViewResult.matchHighlightBackground": "#EBD97340",
+    "peekViewResult.selectionBackground": "#5CDCEB26",
+    "peekViewResult.selectionForeground": "#5CDCEB",
+    "peekViewTitle.background": "#0C0C12",
+    "peekViewTitleLabel.foreground": "#D9D9E3",
+    "peekViewTitleDescription.foreground": "#7684A5",
+
+    // ------------------------------------------------------------------------
+    // Champs de saisie, listes déroulantes, boutons, cases à cocher
+    // ------------------------------------------------------------------------
+    "input.background": "#0C0C12",
+    "input.foreground": "#D9D9E3",
+    "input.border": "#30303C",
+    "input.placeholderForeground": "#5A5F73",
+    "inputOption.activeBackground": "#5CDCEB26",
+    "inputOption.activeBorder": "#5CDCEB",
+    "inputOption.activeForeground": "#5CDCEB",
+    "inputOption.hoverBackground": "#5CDCEB14",
+    "inputValidation.errorBackground": "#0C0C12",
+    "inputValidation.errorBorder": "#F07085",
+    "inputValidation.errorForeground": "#F07085",
+    "inputValidation.warningBackground": "#0C0C12",
+    "inputValidation.warningBorder": "#F2A765",
+    "inputValidation.warningForeground": "#F2A765",
+    "inputValidation.infoBackground": "#0C0C12",
+    "inputValidation.infoBorder": "#5CDCEB",
+    "inputValidation.infoForeground": "#5CDCEB",
+    "dropdown.background": "#0C0C12",
+    "dropdown.listBackground": "#0C0C12",
+    "dropdown.border": "#30303C",
+    "dropdown.foreground": "#D9D9E3",
+    "button.background": "#5CDCEB",
+    "button.foreground": "#0C0C12",
+    "button.hoverBackground": "#9BEAF3",
+    "button.border": "#0C0C1200",
+    "button.separator": "#0C0C1266",
+    "button.secondaryBackground": "#0C0C12",
+    "button.secondaryForeground": "#5CDCEB",
+    "button.secondaryHoverBackground": "#5CDCEB1A",
+    "extensionButton.prominentBackground": "#5CDCEB",
+    "extensionButton.prominentForeground": "#0C0C12",
+    "extensionButton.prominentHoverBackground": "#9BEAF3",
+    "checkbox.background": "#0C0C12",
+    "checkbox.border": "#30303C",
+    "checkbox.foreground": "#5CDCEB",
+    "checkbox.selectBackground": "#0C0C12",
+    "checkbox.selectBorder": "#5CDCEB",
+    "radio.activeForeground": "#5CDCEB",
+    "radio.activeBorder": "#5CDCEB",
+    "radio.activeBackground": "#5CDCEB26",
+    "toolbar.hoverBackground": "#5CDCEB1A",
+    "toolbar.activeBackground": "#5CDCEB26",
+    "keybindingLabel.background": "#0C0C12",
+    "keybindingLabel.foreground": "#5CDCEB",
+    "keybindingLabel.border": "#5CDCEB40",
+    "keybindingLabel.bottomBorder": "#5CDCEB40",
+
+    // Badges et barre de progression
+    "badge.background": "#5CDCEB",
+    "badge.foreground": "#0C0C12",
+    "progressBar.background": "#5CDCEB",
+
+    // ------------------------------------------------------------------------
+    // Palette de commandes (Ctrl+Shift+P) et Quick Open
+    // ------------------------------------------------------------------------
+    "quickInput.background": "#0C0C12",
+    "quickInput.foreground": "#D9D9E3",
+    "quickInputTitle.background": "#0C0C12",
+    "quickInputList.focusBackground": "#5CDCEB26",
+    "quickInputList.focusForeground": "#D9D9E3",
+    "quickInputList.focusIconForeground": "#5CDCEB",
+    "pickerGroup.foreground": "#5CDCEB",
+    "pickerGroup.border": "#22222C",
+
+    // ------------------------------------------------------------------------
+    // Panneau (terminal, problèmes, sortie, console de débogage)
+    // ------------------------------------------------------------------------
+    "panel.background": "#0C0C12",
+    "panel.border": "#22222C",
+    "panel.dropBorder": "#5CDCEB",
+    "panelTitle.activeBorder": "#5CDCEB99",
+    "panelTitle.activeForeground": "#D9D9E3",
+    "panelTitle.inactiveForeground": "#7684A5",
+    "panelInput.border": "#30303C",
+    "panelSection.border": "#22222C",
+    "panelSectionHeader.background": "#0C0C12",
+    "panelSectionHeader.border": "#22222C",
+    "panelStickyScroll.background": "#0C0C12",
+    "outputView.background": "#0C0C12",
+
+    // ------------------------------------------------------------------------
+    // Terminal intégré + 16 couleurs ANSI
+    // ------------------------------------------------------------------------
+    "terminal.background": "#0C0C12",
+    "terminal.foreground": "#D9D9E3",
+    "terminal.border": "#22222C",
+    "terminal.selectionBackground": "#5CDCEB40",
+    "terminal.inactiveSelectionBackground": "#5CDCEB1F",
+    "terminal.findMatchBackground": "#EBD97340",
+    "terminal.findMatchBorder": "#EBD973",
+    "terminal.findMatchHighlightBackground": "#EBD9731F",
+    "terminalCursor.foreground": "#5CDCEB",
+    "terminalCursor.background": "#0C0C12",
+    "terminal.tab.activeBorder": "#5CDCEB99",
+    "terminalCommandDecoration.successBackground": "#72E3A0",
+    "terminalCommandDecoration.errorBackground": "#F07085",
+    "terminalCommandDecoration.defaultBackground": "#5A5F73",
+    "terminalOverviewRuler.cursorForeground": "#5CDCEB",
+    "terminalStickyScroll.background": "#0C0C12",
+    // Noir ANSI légèrement éclairci : du texte "noir" doit rester visible sur #000
+    "terminal.ansiBlack": "#2A2D3A",
+    "terminal.ansiRed": "#F07085",
+    "terminal.ansiGreen": "#72E3A0",
+    "terminal.ansiYellow": "#EBD973",
+    // Bleu absent de la palette : bleu électrique dérivé (ls, git, prompts l'utilisent)
+    "terminal.ansiBlue": "#4D8DFF",
+    "terminal.ansiMagenta": "#B48CF2",
+    "terminal.ansiCyan": "#5CDCEB",
+    "terminal.ansiWhite": "#B8BACC",
+    "terminal.ansiBrightBlack": "#5C6A8A",
+    "terminal.ansiBrightRed": "#FF7A93",
+    "terminal.ansiBrightGreen": "#7DFFB0",
+    "terminal.ansiBrightYellow": "#FFF07A",
+    "terminal.ansiBrightBlue": "#80B0FF",
+    "terminal.ansiBrightMagenta": "#CC99FF",
+    "terminal.ansiBrightCyan": "#9BEAF3",
+    "terminal.ansiBrightWhite": "#FFFFFF",
+
+    // ------------------------------------------------------------------------
+    // Barre d'état (en bas)
+    // ------------------------------------------------------------------------
+    "statusBar.background": "#0C0C12",
+    // Barre d'état : texte plus sombre, c'est la zone la plus statique de l'écran
+    "statusBar.foreground": "#7C86A2",
+    "statusBar.border": "#22222C",
+    "statusBar.focusBorder": "#5CDCEB",
+    "statusBar.noFolderBackground": "#0C0C12",
+    "statusBar.noFolderForeground": "#B8BACC",
+    "statusBar.noFolderBorder": "#22222C",
+    // En débogage : on garde le noir mais le texte et la bordure passent en orange
+    "statusBar.debuggingBackground": "#0C0C12",
+    "statusBar.debuggingForeground": "#F2A765",
+    "statusBar.debuggingBorder": "#F2A765",
+    "statusBarItem.hoverBackground": "#5CDCEB1A",
+    "statusBarItem.activeBackground": "#5CDCEB26",
+    "statusBarItem.focusBorder": "#5CDCEB",
+    "statusBarItem.remoteBackground": "#0C0C12",
+    "statusBarItem.remoteForeground": "#5CDCEB99",
+    "statusBarItem.remoteHoverBackground": "#5CDCEB1A",
+    "statusBarItem.prominentBackground": "#0C0C12",
+    "statusBarItem.prominentForeground": "#5CDCEB99",
+    "statusBarItem.prominentHoverBackground": "#5CDCEB1A",
+    "statusBarItem.errorBackground": "#0C0C12",
+    "statusBarItem.errorForeground": "#F07085",
+    "statusBarItem.warningBackground": "#0C0C12",
+    "statusBarItem.warningForeground": "#F2A765",
+
+    // ------------------------------------------------------------------------
+    // Notifications
+    // ------------------------------------------------------------------------
+    "notifications.background": "#0C0C12",
+    "notifications.foreground": "#D9D9E3",
+    "notifications.border": "#22222C",
+    "notificationCenter.border": "#5CDCEB40",
+    "notificationCenterHeader.background": "#0C0C12",
+    "notificationCenterHeader.foreground": "#D9D9E3",
+    "notificationToast.border": "#5CDCEB40",
+    "notificationLink.foreground": "#5CDCEB",
+    "notificationsErrorIcon.foreground": "#F07085",
+    "notificationsWarningIcon.foreground": "#F2A765",
+    "notificationsInfoIcon.foreground": "#5CDCEB",
+
+    // ------------------------------------------------------------------------
+    // Git : décorations de l'explorateur + éditeur de diff
+    // ------------------------------------------------------------------------
+    "gitDecoration.addedResourceForeground": "#72E3A0",
+    "gitDecoration.untrackedResourceForeground": "#72E3A0",
+    "gitDecoration.modifiedResourceForeground": "#EBD973",
+    "gitDecoration.stageModifiedResourceForeground": "#EBD973",
+    "gitDecoration.deletedResourceForeground": "#F07085",
+    "gitDecoration.stageDeletedResourceForeground": "#F07085",
+    "gitDecoration.renamedResourceForeground": "#5CDCEB",
+    "gitDecoration.conflictingResourceForeground": "#F2A765",
+    "gitDecoration.submoduleResourceForeground": "#B48CF2",
+    "gitDecoration.ignoredResourceForeground": "#4A4F63",
+    "diffEditor.insertedTextBackground": "#72E3A026",
+    "diffEditor.removedTextBackground": "#F0708526",
+    "diffEditor.insertedLineBackground": "#72E3A012",
+    "diffEditor.removedLineBackground": "#F0708512",
+    "diffEditor.border": "#22222C",
+    "diffEditor.diagonalFill": "#22222C",
+    "diffEditorGutter.insertedLineBackground": "#72E3A01F",
+    "diffEditorGutter.removedLineBackground": "#F070851F",
+    "diffEditorOverview.insertedForeground": "#72E3A099",
+    "diffEditorOverview.removedForeground": "#F0708599",
+    "merge.currentHeaderBackground": "#72E3A040",
+    "merge.currentContentBackground": "#72E3A014",
+    "merge.incomingHeaderBackground": "#5CDCEB40",
+    "merge.incomingContentBackground": "#5CDCEB14",
+    "merge.border": "#22222C",
+    "scmGraph.foreground1": "#5CDCEB",
+    "scmGraph.foreground2": "#F2709C",
+    "scmGraph.foreground3": "#EBD973",
+    "scmGraph.foreground4": "#72E3A0",
+    "scmGraph.foreground5": "#B48CF2",
+
+    // ------------------------------------------------------------------------
+    // Débogage
+    // ------------------------------------------------------------------------
+    "debugToolBar.background": "#0C0C12",
+    "debugToolBar.border": "#22222C",
+    "editor.stackFrameHighlightBackground": "#EBD9731A",
+    "editor.focusedStackFrameHighlightBackground": "#72E3A01A",
+    "debugIcon.breakpointForeground": "#F07085",
+    "debugIcon.breakpointDisabledForeground": "#5A5F73",
+    "debugIcon.breakpointCurrentStackframeForeground": "#EBD973",
+    "debugConsole.infoForeground": "#5CDCEB",
+    "debugConsole.warningForeground": "#F2A765",
+    "debugConsole.errorForeground": "#F07085",
+    "debugConsole.sourceForeground": "#B8BACC",
+    "debugTokenExpression.name": "#B48CF2",
+    "debugTokenExpression.value": "#D9D9E3",
+    "debugTokenExpression.string": "#72E3A0",
+    "debugTokenExpression.number": "#F2A765",
+    "debugTokenExpression.boolean": "#F2A765",
+    "debugTokenExpression.error": "#F07085",
+
+    // ------------------------------------------------------------------------
+    // Divers : paramètres, page d'accueil, graphiques
+    // ------------------------------------------------------------------------
+    "settings.headerForeground": "#5CDCEB",
+    "settings.modifiedItemIndicator": "#EBD973",
+    "settings.focusedRowBackground": "#5CDCEB0A",
+    "settings.focusedRowBorder": "#5CDCEB40",
+    "settings.rowHoverBackground": "#5CDCEB08",
+    "settings.headerBorder": "#22222C",
+    "settings.sashBorder": "#22222C",
+    "welcomePage.background": "#0C0C12",
+    "welcomePage.tileBackground": "#0C0C12",
+    "welcomePage.tileBorder": "#22222C",
+    "welcomePage.tileHoverBackground": "#5CDCEB0D",
+    "walkThrough.embeddedEditorBackground": "#0C0C12",
+    "charts.foreground": "#D9D9E3",
+    "charts.lines": "#22222C",
+    "charts.red": "#F07085",
+    "charts.blue": "#5CDCEB",
+    "charts.yellow": "#EBD973",
+    "charts.orange": "#F2A765",
+    "charts.green": "#72E3A0",
+    "charts.purple": "#B48CF2"
+  },
+
+  // ==========================================================================
+  // COLORATION SYNTAXIQUE (TextMate)
+  // Rappel : le style le plus SPÉCIFIQUE gagne, et fontStyle s'hérite du
+  // parent. D'où les "fontStyle": "" explicites pour annuler un gras/italique.
+  // ==========================================================================
+  "tokenColors": [
+    // ---------------------------------------------------------------- Base
+    {
+      "name": "Texte par défaut",
+      "scope": ["source", "text"],
+      "settings": { "foreground": "#D9D9E3" }
+    },
+
+    // ---------------------------------------------------------- Commentaires
+    {
+      "name": "Commentaires (bleu-gris, italique)",
+      "scope": [
+        "comment",
+        "punctuation.definition.comment",
+        "comment.block.documentation",
+        "string.comment"
+      ],
+      "settings": { "foreground": "#7684A5", "fontStyle": "italic" }
+    },
+    {
+      "name": "Tags de documentation (@param, /// [ref], PHPDoc)",
+      "scope": [
+        "comment keyword.other.phpdoc",
+        "comment storage.type.class.jsdoc",
+        "comment.block.documentation storage.type",
+        "comment.block.documentation keyword",
+        "comment.block.documentation variable",
+        "comment variable.other.dart"
+      ],
+      "settings": { "foreground": "#B48CF2", "fontStyle": "italic" }
+    },
+
+    // ------------------------------------------------------------ Mots-clés
+    {
+      "name": "Mots-clés et contrôle de flux (rose néon, gras)",
+      "scope": [
+        "keyword",
+        "keyword.control",
+        "keyword.other",
+        "keyword.operator.new",
+        "keyword.operator.expression",
+        "keyword.operator.delete",
+        "keyword.operator.sizeof",
+        "keyword.operator.alignof",
+        "keyword.operator.typeid",
+        "keyword.operator.cast",
+        "keyword.operator.wordlike",
+        "keyword.operator.logical.sql",
+        "storage.type",
+        "storage.modifier",
+        "support.function.construct.php",
+        "punctuation.section.embedded.begin.php",
+        "punctuation.section.embedded.end.php"
+      ],
+      "settings": { "foreground": "#F2709C", "fontStyle": "bold" }
+    },
+    {
+      "name": "this / self / super / $this (rose, italique, sans gras)",
+      "scope": ["variable.language", "variable.language.this", "variable.language.super"],
+      "settings": { "foreground": "#F2709C", "fontStyle": "italic" }
+    },
+
+    // ------------------------------------------ Opérateurs et ponctuation
+    {
+      "name": "Opérateurs (discrets)",
+      "scope": [
+        "keyword.operator",
+        "keyword.operator.assignment",
+        "keyword.operator.arithmetic",
+        "keyword.operator.comparison",
+        "keyword.operator.relational",
+        "keyword.operator.logical",
+        "keyword.operator.bitwise",
+        "keyword.operator.ternary",
+        "punctuation.separator.namespace.access",
+        "punctuation.separator.scope-resolution"
+      ],
+      "settings": { "foreground": "#8A93B0", "fontStyle": "" }
+    },
+    {
+      "name": "Pointeurs et références C/C++ (* & ->) : rose, non gras, car porteurs de sens",
+      "scope": [
+        "storage.modifier.pointer",
+        "storage.modifier.reference",
+        "keyword.operator.dereference",
+        "keyword.operator.address",
+        "punctuation.separator.pointer-access",
+        "keyword.operator.arrow"
+      ],
+      "settings": { "foreground": "#F2709C", "fontStyle": "" }
+    },
+    {
+      "name": "Ponctuation (très discrète)",
+      "scope": [
+        "punctuation",
+        "meta.brace",
+        "punctuation.separator",
+        "punctuation.terminator",
+        "punctuation.accessor",
+        "punctuation.definition.tag",
+        "punctuation.definition.block",
+        "punctuation.definition.parameters",
+        "punctuation.definition.arguments"
+      ],
+      "settings": { "foreground": "#7C86A2" }
+    },
+
+    // ------------------------------------------------------------- Chaînes
+    {
+      "name": "Chaînes (vert néon)",
+      "scope": [
+        "string",
+        "string.quoted",
+        "string.template",
+        "string.unquoted",
+        "punctuation.definition.string",
+        "string.quoted.other.lt-gt.include",
+        "meta.preprocessor.include string"
+      ],
+      "settings": { "foreground": "#72E3A0" }
+    },
+    {
+      "name": "Interpolation dans les chaînes (Dart ${}, JS ${}, PHP {$})",
+      "scope": [
+        "punctuation.definition.template-expression",
+        "punctuation.section.embedded",
+        "punctuation.definition.string.interpolation",
+        "string.interpolated.expression.dart punctuation"
+      ],
+      "settings": { "foreground": "#F2709C", "fontStyle": "" }
+    },
+    {
+      "name": "Variables interpolées",
+      "scope": [
+        "meta.template.expression",
+        "string.interpolated.expression",
+        "string variable.other.dart",
+        "string variable.other.php"
+      ],
+      "settings": { "foreground": "#D9D9E3" }
+    },
+    {
+      "name": "Séquences d'échappement et regex",
+      "scope": ["constant.character.escape", "string.regexp", "constant.other.placeholder"],
+      "settings": { "foreground": "#F2A765" }
+    },
+
+    // ------------------------------------------ Nombres et constantes
+    {
+      "name": "Nombres, constantes, booléens, null (orange néon)",
+      "scope": [
+        "constant.numeric",
+        "constant.language",
+        "constant.other",
+        "constant.character",
+        "support.constant",
+        "variable.other.constant",
+        "variable.other.enummember",
+        "entity.name.constant",
+        "keyword.other.unit",
+        "constant.character.entity",
+        "constant.other.color"
+      ],
+      "settings": { "foreground": "#F2A765", "fontStyle": "" }
+    },
+
+    // ----------------------------------------------- Fonctions et méthodes
+    {
+      "name": "Fonctions et méthodes (cyan)",
+      "scope": [
+        "entity.name.function",
+        "entity.name.function.member",
+        "meta.function-call entity.name.function",
+        "support.function",
+        "variable.function",
+        "entity.name.operator.custom-literal",
+        "support.function.aggregate.sql",
+        "support.function.scalar.sql"
+      ],
+      "settings": { "foreground": "#5CDCEB", "fontStyle": "" }
+    },
+
+    // ------------------------------------------------- Types et classes
+    {
+      "name": "Types, classes, structs, enums, widgets Flutter (jaune)",
+      "scope": [
+        "entity.name.type",
+        "entity.name.class",
+        "entity.name.struct",
+        "entity.name.enum",
+        "entity.name.union",
+        "entity.name.interface",
+        "entity.name.trait",
+        "entity.other.inherited-class",
+        "support.class",
+        "support.type",
+        "storage.type.built-in",
+        "storage.type.primitive",
+        "storage.type.primitive.dart",
+        "storage.type.sql",
+        "support.type.primitive",
+        "support.class.dart",
+        "support.class.php",
+        "constant.other.table-name.sql"
+      ],
+      "settings": { "foreground": "#EBD973", "fontStyle": "" }
+    },
+    {
+      "name": "Paramètres de template C++ / génériques (jaune, italique)",
+      "scope": [
+        "entity.name.type.parameter",
+        "entity.name.type.template",
+        "storage.type.template.argument",
+        "meta.template.expression storage.type"
+      ],
+      "settings": { "foreground": "#EBD973", "fontStyle": "italic" }
+    },
+    {
+      "name": "Namespaces, packages (jaune, italique)",
+      "scope": [
+        "entity.name.namespace",
+        "entity.name.scope-resolution",
+        "entity.name.type.namespace",
+        "support.other.namespace.php",
+        "entity.name.package",
+        "constant.other.database-name.sql"
+      ],
+      "settings": { "foreground": "#EBD973", "fontStyle": "italic" }
+    },
+
+    // -------------------------------------- Variables, paramètres, propriétés
+    {
+      "name": "Variables (blanc cassé)",
+      "scope": [
+        "variable",
+        "variable.other",
+        "variable.other.readwrite",
+        "variable.other.php",
+        "punctuation.definition.variable.php",
+        "meta.definition.variable.name",
+        "support.variable"
+      ],
+      "settings": { "foreground": "#D9D9E3" }
+    },
+    {
+      "name": "Paramètres de fonction (blanc cassé, italique)",
+      "scope": ["variable.parameter", "meta.parameter variable"],
+      "settings": { "foreground": "#D9D9E3", "fontStyle": "italic" }
+    },
+    {
+      "name": "Propriétés, membres, champs (violet)",
+      "scope": [
+        "variable.other.property",
+        "variable.other.object.property",
+        "variable.other.member",
+        "support.variable.property",
+        "entity.name.variable.field",
+        "meta.property.object"
+      ],
+      "settings": { "foreground": "#B48CF2", "fontStyle": "" }
+    },
+
+    // ------------------------------------ Préprocesseur C / C++
+    {
+      "name": "Directives #include #define #ifdef (rose, gras)",
+      "scope": [
+        "keyword.control.directive",
+        "punctuation.definition.directive",
+        "meta.preprocessor keyword.control",
+        "keyword.other.preprocessor"
+      ],
+      "settings": { "foreground": "#F2709C", "fontStyle": "bold" }
+    },
+    {
+      "name": "Noms de macros (orange, comme les constantes)",
+      "scope": [
+        "entity.name.function.preprocessor",
+        "entity.name.other.preprocessor.macro",
+        "meta.preprocessor.macro entity.name.function",
+        "variable.other.macro"
+      ],
+      "settings": { "foreground": "#F2A765", "fontStyle": "" }
+    },
+
+    // ------------------------------------ Annotations / décorateurs
+    {
+      "name": "Annotations Dart (@override, @required), décorateurs, attributs PHP (violet, italique)",
+      "scope": [
+        "storage.type.annotation",
+        "storage.type.annotation.dart",
+        "meta.decorator",
+        "entity.name.function.decorator",
+        "punctuation.decorator",
+        "meta.attribute.php"
+      ],
+      "settings": { "foreground": "#B48CF2", "fontStyle": "italic" }
+    },
+
+    // ---------------------------------------------------------------- HTML
+    {
+      "name": "Balises HTML (rose, non gras)",
+      "scope": ["entity.name.tag", "meta.tag.sgml.doctype", "entity.name.tag.doctype"],
+      "settings": { "foreground": "#F2709C", "fontStyle": "" }
+    },
+    {
+      "name": "Attributs HTML (violet, italique)",
+      "scope": ["entity.other.attribute-name"],
+      "settings": { "foreground": "#B48CF2", "fontStyle": "italic" }
+    },
+
+    // ----------------------------------------------------------------- CSS
+    {
+      "name": "CSS : sélecteurs d'éléments (rose)",
+      "scope": ["entity.name.tag.css", "entity.name.tag.reference.scss", "entity.name.tag.wildcard.css"],
+      "settings": { "foreground": "#F2709C", "fontStyle": "" }
+    },
+    {
+      "name": "CSS : sélecteurs .classe (jaune)",
+      "scope": [
+        "entity.other.attribute-name.class",
+        "entity.other.attribute-name.class.css",
+        "punctuation.definition.entity.css"
+      ],
+      "settings": { "foreground": "#EBD973", "fontStyle": "" }
+    },
+    {
+      "name": "CSS : sélecteurs #id (orange)",
+      "scope": ["entity.other.attribute-name.id", "entity.other.attribute-name.id.css"],
+      "settings": { "foreground": "#F2A765", "fontStyle": "" }
+    },
+    {
+      "name": "CSS : pseudo-classes et pseudo-éléments (cyan)",
+      "scope": [
+        "entity.other.attribute-name.pseudo-class",
+        "entity.other.attribute-name.pseudo-element"
+      ],
+      "settings": { "foreground": "#5CDCEB", "fontStyle": "" }
+    },
+    {
+      "name": "CSS : noms de propriétés (violet, cohérent avec les propriétés d'objet)",
+      "scope": [
+        "support.type.property-name",
+        "support.type.property-name.css",
+        "support.type.vendored.property-name.css",
+        "meta.property-name"
+      ],
+      "settings": { "foreground": "#B48CF2", "fontStyle": "" }
+    },
+    {
+      "name": "CSS : valeurs (orange, ce sont des constantes)",
+      "scope": [
+        "support.constant.property-value",
+        "support.constant.font-name",
+        "support.constant.color",
+        "entity.other.keyframe-offset"
+      ],
+      "settings": { "foreground": "#F2A765" }
+    },
+    {
+      "name": "CSS : fonctions var(), rgb(), calc() (cyan)",
+      "scope": ["support.function.misc.css", "support.function.transform.css"],
+      "settings": { "foreground": "#5CDCEB" }
+    },
+    {
+      "name": "CSS : variables personnalisées --ma-var",
+      "scope": ["variable.css", "variable.argument.css", "variable.scss"],
+      "settings": { "foreground": "#D9D9E3", "fontStyle": "italic" }
+    },
+    {
+      "name": "CSS : @media, @import, !important (rose, gras)",
+      "scope": [
+        "keyword.control.at-rule",
+        "punctuation.definition.keyword",
+        "keyword.other.important"
+      ],
+      "settings": { "foreground": "#F2709C", "fontStyle": "bold" }
+    },
+
+    // ---------------------------------------------------------------- JSON
+    {
+      "name": "JSON : clés (violet)",
+      "scope": [
+        "support.type.property-name.json",
+        "support.type.property-name.json punctuation",
+        "punctuation.support.type.property-name"
+      ],
+      "settings": { "foreground": "#B48CF2", "fontStyle": "" }
+    },
+    {
+      "name": "JSON : true / false / null (orange)",
+      "scope": ["constant.language.json"],
+      "settings": { "foreground": "#F2A765" }
+    },
+
+    // ------------------------------------------------------------ Markdown
+    {
+      "name": "Markdown : titre h1 (cyan, gras)",
+      "scope": ["markup.heading", "markup.heading.setext"],
+      "settings": { "foreground": "#5CDCEB", "fontStyle": "bold" }
+    },
+    {
+      "name": "Markdown : titre h2 (rose)",
+      "scope": ["heading.2.markdown"],
+      "settings": { "foreground": "#F2709C", "fontStyle": "bold" }
+    },
+    {
+      "name": "Markdown : titre h3 (jaune)",
+      "scope": ["heading.3.markdown"],
+      "settings": { "foreground": "#EBD973", "fontStyle": "bold" }
+    },
+    {
+      "name": "Markdown : titres h4-h6 (violet)",
+      "scope": ["heading.4.markdown", "heading.5.markdown", "heading.6.markdown"],
+      "settings": { "foreground": "#B48CF2", "fontStyle": "bold" }
+    },
+    {
+      "name": "Markdown : gras (orange, gras)",
+      "scope": ["markup.bold", "markup.bold punctuation.definition.bold"],
+      "settings": { "foreground": "#F2A765", "fontStyle": "bold" }
+    },
+    {
+      "name": "Markdown : italique (violet, italique)",
+      "scope": ["markup.italic", "markup.italic punctuation.definition.italic"],
+      "settings": { "foreground": "#B48CF2", "fontStyle": "italic" }
+    },
+    {
+      "name": "Markdown : barré",
+      "scope": ["markup.strikethrough"],
+      "settings": { "fontStyle": "strikethrough" }
+    },
+    {
+      "name": "Markdown : code inline et blocs (vert)",
+      "scope": ["markup.inline.raw", "markup.fenced_code.block.markdown", "markup.raw.block"],
+      "settings": { "foreground": "#72E3A0", "fontStyle": "" }
+    },
+    {
+      "name": "Markdown : langage du bloc de code (```dart)",
+      "scope": ["fenced_code.block.language"],
+      "settings": { "foreground": "#5CDCEB", "fontStyle": "italic" }
+    },
+    {
+      "name": "Markdown : texte des liens (jaune)",
+      "scope": [
+        "string.other.link.title.markdown",
+        "string.other.link.description.markdown",
+        "constant.other.reference.link.markdown"
+      ],
+      "settings": { "foreground": "#EBD973" }
+    },
+    {
+      "name": "Markdown : URL (cyan, souligné)",
+      "scope": ["markup.underline.link", "markup.underline.link.image"],
+      "settings": { "foreground": "#5CDCEB", "fontStyle": "underline" }
+    },
+    {
+      "name": "Markdown : citations (bleu-gris, italique)",
+      "scope": ["markup.quote"],
+      "settings": { "foreground": "#7684A5", "fontStyle": "italic" }
+    },
+    {
+      "name": "Markdown : puces de liste (rose)",
+      "scope": ["punctuation.definition.list.begin.markdown", "beginning.punctuation.definition.list.markdown"],
+      "settings": { "foreground": "#F2709C" }
+    },
+    {
+      "name": "Markdown : séparateur ---",
+      "scope": ["meta.separator.markdown"],
+      "settings": { "foreground": "#5A5F73" }
+    },
+
+    // ------------------------------------------------------- Diff / patch
+    {
+      "name": "Diff : lignes ajoutées",
+      "scope": ["markup.inserted", "meta.diff.header.to-file"],
+      "settings": { "foreground": "#72E3A0" }
+    },
+    {
+      "name": "Diff : lignes supprimées",
+      "scope": ["markup.deleted", "meta.diff.header.from-file"],
+      "settings": { "foreground": "#F07085" }
+    },
+    {
+      "name": "Diff : lignes modifiées",
+      "scope": ["markup.changed", "meta.diff.range"],
+      "settings": { "foreground": "#EBD973" }
+    },
+
+    // ---------------------------------------------------------------- Java
+    {
+      "name": "Java : références de types (String, List<T>) — la grammaire les range sous storage.type",
+      "scope": [
+        "storage.type.java",
+        "storage.type.generic.java",
+        "storage.type.object.array.java",
+        "storage.type.primitive.java",
+        "storage.type.primitive.array.java",
+        "entity.name.type.class.java",
+        "entity.name.type.interface.java",
+        "entity.name.type.enum.java",
+        "entity.name.type.record.java"
+      ],
+      "settings": { "foreground": "#EBD973", "fontStyle": "" }
+    },
+    {
+      "name": "Java : génériques <T> (jaune, italique)",
+      "scope": ["storage.type.generic.wildcard.java", "meta.definition.class.generic.java storage.type.generic.java"],
+      "settings": { "foreground": "#EBD973", "fontStyle": "italic" }
+    },
+    {
+      "name": "Java : annotations @Override, @Test (violet, italique)",
+      "scope": [
+        "storage.type.annotation.java",
+        "punctuation.definition.annotation.java",
+        "meta.declaration.annotation.java storage.type"
+      ],
+      "settings": { "foreground": "#B48CF2", "fontStyle": "italic" }
+    },
+    {
+      "name": "Java : paramètres d'annotation @Mapping(value = ...)",
+      "scope": ["variable.other.annotation-element.java"],
+      "settings": { "foreground": "#B48CF2", "fontStyle": "" }
+    },
+    {
+      "name": "Java : packages et imports (jaune, italique)",
+      "scope": ["storage.modifier.package.java", "storage.modifier.import.java"],
+      "settings": { "foreground": "#EBD973", "fontStyle": "italic" }
+    },
+    {
+      "name": "Java : champs d'objet (this.name)",
+      "scope": ["variable.other.object.property.java", "variable.other.definition.java"],
+      "settings": { "foreground": "#B48CF2", "fontStyle": "" }
+    },
+
+    // -------------------------------------------------------------- Python
+    {
+      "name": "Python : self / cls (rose, italique, comme this)",
+      "scope": [
+        "variable.language.special.self.python",
+        "variable.parameter.function.language.special.self.python",
+        "variable.language.special.cls.python",
+        "variable.parameter.function.language.special.cls.python"
+      ],
+      "settings": { "foreground": "#F2709C", "fontStyle": "italic" }
+    },
+    {
+      "name": "Python : décorateurs @property, @dataclass (violet, italique)",
+      "scope": [
+        "entity.name.function.decorator.python",
+        "punctuation.definition.decorator.python",
+        "meta.function.decorator.python support.type"
+      ],
+      "settings": { "foreground": "#B48CF2", "fontStyle": "italic" }
+    },
+    {
+      "name": "Python : docstrings (traitées comme de la documentation)",
+      "scope": ["string.quoted.docstring", "string.quoted.docstring punctuation.definition.string"],
+      "settings": { "foreground": "#7684A5", "fontStyle": "italic" }
+    },
+    {
+      "name": "Python : préfixe f\"\" et accolades des f-strings (rose, non gras)",
+      "scope": [
+        "storage.type.string.python",
+        "storage.type.format.python",
+        "constant.character.format.placeholder.other.python"
+      ],
+      "settings": { "foreground": "#F2709C", "fontStyle": "" }
+    },
+    {
+      "name": "Python : fonctions natives (print, len, range) et appels",
+      "scope": ["support.function.builtin.python", "meta.function-call.generic.python"],
+      "settings": { "foreground": "#5CDCEB", "fontStyle": "" }
+    },
+    {
+      "name": "Python : types natifs (int, str, list) et exceptions",
+      "scope": ["support.type.python", "support.type.exception.python"],
+      "settings": { "foreground": "#EBD973", "fontStyle": "" }
+    },
+    {
+      "name": "Python : noms de modules importés (jaune, italique)",
+      "scope": ["entity.name.namespace.python", "meta.import.python entity.name"],
+      "settings": { "foreground": "#EBD973", "fontStyle": "italic" }
+    },
+
+    // ----------------------------------------------------------------- PHP
+    {
+      "name": "PHP : types des signatures (int, string, ?array) — jaune, pas rose",
+      "scope": ["keyword.other.type.php"],
+      "settings": { "foreground": "#EBD973", "fontStyle": "" }
+    },
+
+    // ------------------------------------------------------------- Erreurs
+    {
+      "name": "Code invalide",
+      "scope": ["invalid", "invalid.illegal"],
+      "settings": { "foreground": "#F07085", "fontStyle": "underline" }
+    },
+    {
+      "name": "Code déprécié",
+      "scope": ["invalid.deprecated"],
+      "settings": { "foreground": "#F2A765", "fontStyle": "strikethrough" }
+    }
+  ],
+
+  // ==========================================================================
+  // COULEURS SÉMANTIQUES (fournies par les serveurs de langage)
+  // Elles priment sur TextMate quand le serveur les envoie : même logique
+  // de couleurs pour que les deux systèmes restent cohérents.
+  // ==========================================================================
+  "semanticTokenColors": {
+    "keyword": { "foreground": "#F2709C", "bold": true },
+    "comment": { "foreground": "#7684A5", "italic": true },
+    "string": "#72E3A0",
+    "number": "#F2A765",
+    "regexp": "#F2A765",
+    "operator": "#8A93B0",
+
+    "function": "#5CDCEB",
+    "method": "#5CDCEB",
+    "function.defaultLibrary": "#5CDCEB",
+    "method.static": { "foreground": "#5CDCEB", "italic": true },
+
+    "type": "#EBD973",
+    "class": "#EBD973",
+    "struct": "#EBD973",
+    "interface": { "foreground": "#EBD973", "italic": true },
+    "enum": "#EBD973",
+    "typeParameter": { "foreground": "#EBD973", "italic": true },
+    "namespace": { "foreground": "#EBD973", "italic": true },
+    // Types spécifiques à l'extension C/C++ de Microsoft (cpptools)
+    "templateType": { "foreground": "#EBD973", "italic": true },
+    "templateFunction": "#5CDCEB",
+
+    "enumMember": "#F2A765",
+    "macro": "#F2A765",
+    "variable.readonly": "#F2A765",
+    "variable.constant": "#F2A765",
+    "property.static": { "foreground": "#F2A765" },
+
+    "variable": "#D9D9E3",
+    "parameter": { "foreground": "#D9D9E3", "italic": true },
+    "property": "#B48CF2",
+    "property.readonly": "#B48CF2",
+
+    // Dart : annotations (@override) et accesseurs
+    "annotation": { "foreground": "#B48CF2", "italic": true },
+    "decorator": { "foreground": "#B48CF2", "italic": true },
+
+    // Java (extension Red Hat) : membres d'annotation et modificateurs
+    "annotationMember": "#B48CF2",
+    "modifier": { "foreground": "#F2709C", "bold": true },
+
+    // Python (Pylance) : self/cls comme "this", modules comme namespaces
+    "selfParameter": { "foreground": "#F2709C", "italic": true },
+    "clsParameter": { "foreground": "#F2709C", "italic": true },
+    "module": { "foreground": "#EBD973", "italic": true },
+    "builtinConstant": "#F2A765",
+
+    // Tout symbole déprécié est barré
+    "*.deprecated": { "strikethrough": true }
+  }
+}

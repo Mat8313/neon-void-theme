@@ -1,0 +1,49 @@
+{
+  "name": "neon-void-theme",
+  "displayName": "Neon Void",
+  "description": "Thème sombre cyberpunk : néons équilibrés sur noir pur, optimisé pour les écrans AMOLED.",
+  "version": "1.2.1",
+  "publisher": "matisbillet",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "dark",
+    "amoled",
+    "black",
+    "neon",
+    "cyberpunk",
+    "oled"
+  ],
+  "vsce": {
+    "dependencies": false
+  },
+  "scripts": {
+    "build": "node scripts/build-soft.js",
+    "vscode:prepublish": "node scripts/build-soft.js",
+    "package": "npx @vscode/vsce package --no-dependencies --allow-missing-repository"
+  },
+  "galleryBanner": {
+    "color": "#000000",
+    "theme": "dark"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "label": "Neon Void",
+        "uiTheme": "vs-dark",
+        "path": "./themes/neon-void-color-theme.json"
+      },
+      {
+        "label": "Neon Void Soft",
+        "uiTheme": "vs-dark",
+        "path": "./themes/neon-void-soft-color-theme.json"
+      }
+    ]
+  }
+}

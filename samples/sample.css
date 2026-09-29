@@ -1,0 +1,19 @@
+@import url("reset.css");
+
+:root {
+  --accent: #00e5ff;
+}
+
+/* Conteneur principal */
+.container > a:hover,
+#app::before {
+  display: flex;
+  margin: 0 auto;
+  width: calc(100% - 2rem);
+  color: var(--accent);
+  background: rgba(0, 0, 0, 0.9) !important;
+}
+
+@media (max-width: 768px) {
+  body { font-family: "Fira Code", monospace; }
+}
