@@ -62,7 +62,15 @@ intensité est réservé au code, qui défile en permanence.
 
 ## Installation
 
-Depuis un `.vsix` :
+Téléchargez le `.vsix` ou générez-le depuis les sources :
+
+```bash
+git clone https://github.com/Mat8313/neon-void-theme.git
+cd neon-void-theme
+npm run package
+```
+
+Puis installez-le :
 
 ```bash
 code --install-extension neon-void-theme-1.0.0.vsix

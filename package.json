@@ -5,6 +5,14 @@
   "version": "1.2.1",
   "publisher": "matisbillet",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mat8313/neon-void-theme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Mat8313/neon-void-theme/issues"
+  },
+  "homepage": "https://github.com/Mat8313/neon-void-theme#readme",
   "engines": {
     "vscode": "^1.75.0"
   },
@@ -26,7 +34,7 @@
   "scripts": {
     "build": "node scripts/build-soft.js",
     "vscode:prepublish": "node scripts/build-soft.js",
-    "package": "npx @vscode/vsce package --no-dependencies --allow-missing-repository"
+    "package": "npx @vscode/vsce package --no-dependencies"
   },
   "galleryBanner": {
     "color": "#000000",
