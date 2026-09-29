@@ -58,6 +58,8 @@ moins saturés. Elle est pensée pour les écrans LCD, un second écran ou le so
 depuis le thème principal : modifiez uniquement `neon-void-color-theme.json`, puis lancez
 `npm run build` (c'est aussi fait automatiquement lors du packaging).
 
+![Neon Void Soft dans VS Code : même code Python sur fond gris-bleu très sombre, néons adoucis](images/screenshot-soft.png)
+
 ## Pensé pour l'OLED
 
 Les éléments qui ne bougent jamais (icônes de la barre d'activité, trait de l'onglet actif,
