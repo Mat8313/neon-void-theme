@@ -51,6 +51,11 @@ C / C++ (préprocesseur, namespaces, templates, pointeurs), Dart / Flutter (anno
 async/await), PHP, HTML, CSS, SQL, JSON et Markdown. Les autres langages profitent des règles
 génériques.
 
+## Extensions prises en charge
+
+- **[Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)** :
+  messages d'erreur en bout de ligne dans les couleurs néon du thème, avec des fonds discrets.
+
 ## Variante Neon Void Soft
 
 Même logique de couleurs, avec un fond gris-bleu très sombre (`#0C0C12`) et des néons un peu
@@ -75,7 +80,7 @@ intensité est réservé au code, qui défile en permanence.
    - en ligne de commande :
 
      ```bash
-     code --install-extension neon-void-theme-1.2.1.vsix
+     code --install-extension neon-void-theme-1.3.0.vsix
      ```
 
 Vous pouvez aussi générer le `.vsix` depuis les sources :

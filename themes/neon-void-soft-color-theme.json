@@ -275,6 +275,33 @@
     "editorLightBulb.foreground": "#EBD973",
     "editorLightBulbAutoFix.foreground": "#5CDCEB",
 
+    // Extension Error Lens (usernamehw.errorlens) : messages en bout de ligne.
+    // Texte dans les couleurs de diagnostic du thème, fonds très légers (~8 %)
+    // pour ne pas transformer l'éditeur en sapin de Noël sur un écran OLED.
+    "errorLens.errorForeground": "#F07085",
+    "errorLens.errorBackground": "#F0708514",
+    "errorLens.errorMessageBackground": "#F070851A",
+    "errorLens.errorRangeBackground": "#F070851A",
+    "errorLens.warningForeground": "#F2A765",
+    "errorLens.warningBackground": "#F2A76514",
+    "errorLens.warningMessageBackground": "#F2A7651A",
+    "errorLens.warningRangeBackground": "#F2A7651A",
+    "errorLens.infoForeground": "#5CDCEB",
+    "errorLens.infoBackground": "#5CDCEB0F",
+    "errorLens.infoMessageBackground": "#5CDCEB14",
+    "errorLens.infoRangeBackground": "#5CDCEB14",
+    // Suggestions (hints) : vert atténué, ce sont les messages les plus nombreux
+    "errorLens.hintForeground": "#72E3A0B3",
+    "errorLens.hintBackground": "#72E3A00A",
+    "errorLens.hintMessageBackground": "#72E3A00F",
+    "errorLens.hintRangeBackground": "#72E3A00F",
+    "errorLens.statusBarIconErrorForeground": "#F07085",
+    "errorLens.statusBarIconWarningForeground": "#F2A765",
+    "errorLens.statusBarErrorForeground": "#F07085",
+    "errorLens.statusBarWarningForeground": "#F2A765",
+    "errorLens.statusBarInfoForeground": "#5CDCEB",
+    "errorLens.statusBarHintForeground": "#72E3A0",
+
     // ------------------------------------------------------------------------
     // Colorisation des paires de crochets : cycle cyan -> rose -> jaune
     // (4-6 répètent le cycle pour garder exactement 3 niveaux visuels)

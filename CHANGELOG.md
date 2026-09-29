@@ -3,6 +3,13 @@
 Toutes les évolutions notables de Neon Void sont listées ici.
 Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/).
 
+## [1.3.0] - 2026-09-29
+
+### Ajouté
+- Couleurs pour l'extension **Error Lens** : messages en bout de ligne dans les couleurs
+  de diagnostic du thème (rouge, orange, cyan, vert) avec des fonds très légers, et
+  compteurs de la barre d'état assortis. Appliquées aussi à la variante Soft.
+
 ## [1.2.1] - 2026-09-29
 
 ### Corrigé
