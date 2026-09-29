@@ -4,6 +4,8 @@ Thème sombre **cyberpunk** pour Visual Studio Code : néons équilibrés sur **
 pensé pour les écrans AMOLED. Les pixels noirs y sont éteints, d'où un contraste infini et une
 consommation réduite.
 
+**[⬇ Télécharger la dernière version (.vsix)](https://github.com/Mat8313/neon-void-theme/releases/latest)**
+
 ## Philosophie
 
 - **Tout est noir.** L'éditeur, les barres, les panneaux, le terminal, les onglets et les widgets
@@ -62,18 +64,22 @@ intensité est réservé au code, qui défile en permanence.
 
 ## Installation
 
-Téléchargez le `.vsix` ou générez-le depuis les sources :
+1. Téléchargez le fichier `.vsix` depuis la
+   **[dernière release](https://github.com/Mat8313/neon-void-theme/releases/latest)**.
+2. Installez-le, au choix :
+   - dans VS Code : panneau Extensions → `...` → **Install from VSIX...**
+   - en ligne de commande :
+
+     ```bash
+     code --install-extension neon-void-theme-1.2.1.vsix
+     ```
+
+Vous pouvez aussi générer le `.vsix` depuis les sources :
 
 ```bash
 git clone https://github.com/Mat8313/neon-void-theme.git
 cd neon-void-theme
 npm run package
-```
-
-Puis installez-le :
-
-```bash
-code --install-extension neon-void-theme-1.0.0.vsix
 ```
 
 Ensuite, ouvrez `Ctrl+K Ctrl+T` et choisissez **Neon Void**.
