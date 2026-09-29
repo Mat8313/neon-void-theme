@@ -6,6 +6,8 @@ consommation réduite.
 
 **[⬇ Télécharger la dernière version (.vsix)](https://github.com/Mat8313/neon-void-theme/releases/latest)**
 
+![Neon Void dans VS Code : code Python sur fond noir pur, mots-clés roses, types jaunes, fonctions cyan](images/screenshot.png)
+
 ## Philosophie
 
 - **Tout est noir.** L'éditeur, les barres, les panneaux, le terminal, les onglets et les widgets
